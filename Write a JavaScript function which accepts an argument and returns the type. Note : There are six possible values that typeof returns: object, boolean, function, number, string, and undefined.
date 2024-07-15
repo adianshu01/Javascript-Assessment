@@ -1,0 +1,32 @@
+function isPrime(num) {
+    // Check if number is less than or equal to 1
+    if (num <= 1) {
+        return false;
+    }
+
+    // Check for numbers 2 and 3
+    if (num <= 3) {
+        return true;
+    }
+
+    // Check for other even numbers and multiples of 3
+    if (num % 2 === 0 || num % 3 === 0) {
+        return false;
+    }
+
+    // Check divisibility from 5 up to the square root of num
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Example usage:
+const number1 = 17;
+const number2 = 15;
+
+console.log(number1 + " is prime:", isPrime(number1)); // true
+console.log(number2 + " is prime:", isPrime(number2)); // false
