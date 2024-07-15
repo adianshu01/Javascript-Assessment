@@ -1,0 +1,29 @@
+function countOccurrences(str) {
+    // Initialize an empty object to store character counts
+    let charCount = {};
+
+    // Remove spaces and convert to lowercase (if case insensitive)
+    str = str.replace(/\s/g, '').toLowerCase();
+
+    // Iterate through each character in the string
+    for (let char of str) {
+        // Check if character is already in charCount, if not initialize it with 0
+        if (charCount[char] === undefined) {
+            charCount[char] = 0;
+        }
+        // Increment the count for the current character
+        charCount[char]++;
+    }
+
+    return charCount;
+}
+
+// Example usage:
+const inputString = "specified string";
+const occurrences = countOccurrences(inputString);
+
+console.log("Input string:", inputString);
+console.log("Occurrences of each letter:");
+for (let char in occurrences) {
+    console.log(`${char}: ${occurrences[char]}`);
+}
