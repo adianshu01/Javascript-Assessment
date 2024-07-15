@@ -1,0 +1,29 @@
+function isLeapYear(year) {
+    // Check if the year is divisible by 4
+    if (year % 4 === 0) {
+        // If the year is divisible by 100
+        if (year % 100 === 0) {
+            // Check if the year is also divisible by 400
+            if (year % 400 === 0) {
+                return true; // Leap year
+            } else {
+                return false; // Not a leap year
+            }
+        } else {
+            return true; // Leap year
+        }
+    } else {
+        return false; // Not a leap year
+    }
+}
+
+// Test the function with a few examples
+const year1 = 2000;
+const year2 = 1900;
+const year3 = 2024;
+const year4 = 2023;
+
+console.log(year1 + " is a leap year: " + isLeapYear(year1)); // true
+console.log(year2 + " is a leap year: " + isLeapYear(year2)); // false
+console.log(year3 + " is a leap year: " + isLeapYear(year3)); // true
+console.log(year4 + " is a leap year: " + isLeapYear(year4)); // false
