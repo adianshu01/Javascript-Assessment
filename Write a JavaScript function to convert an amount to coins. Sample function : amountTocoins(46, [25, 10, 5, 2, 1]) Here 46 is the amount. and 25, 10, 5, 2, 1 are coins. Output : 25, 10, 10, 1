@@ -1,0 +1,22 @@
+function amountToCoins(amount, coins) {
+    // Initialize an empty array to store the coins
+    let result = [];
+
+    // Iterate through each coin denomination in descending order
+    for (let i = 0; i < coins.length; i++) {
+        // Continue subtracting the current coin denomination from amount
+        while (amount >= coins[i]) {
+            result.push(coins[i]);
+            amount -= coins[i];
+        }
+    }
+
+    return result;
+}
+
+// Example usage:
+const amount = 46;
+const coins = [25, 10, 5, 2, 1];
+const coinsUsed = amountToCoins(amount, coins);
+
+console.log(`Amount ${amount} converted to coins:`, coinsUsed);
