@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Window Example</title>
+</head>
+<body>
+    <h1>Welcome to the Print Window Example</h1>
+    <p>Click the button below to print the contents of this window.</p>
+    <button onclick="printCurrentWindow()">Print this page</button>
+
+    <script>
+        function printCurrentWindow() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
