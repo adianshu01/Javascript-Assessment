@@ -1,0 +1,23 @@
+function generateCombinations(str) {
+    let result = [];
+
+    function combine(current, start) {
+        for (let i = start; i < str.length; i++) {
+            current += str[i];
+            result.push(current);
+            combine(current, i + 1);
+            current = current.slice(0, -1); // backtrack
+        }
+    }
+
+    combine('', 0);
+
+    return result;
+}
+
+// Test
+const inputString = 'dog';
+const combinations = generateCombinations(inputString);
+
+console.log("Input string:", inputString);
+console.log("All combinations:", combinations);
