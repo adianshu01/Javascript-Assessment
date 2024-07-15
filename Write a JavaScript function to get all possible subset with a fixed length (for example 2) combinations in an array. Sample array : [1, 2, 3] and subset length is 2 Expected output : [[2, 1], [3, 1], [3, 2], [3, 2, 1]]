@@ -1,0 +1,27 @@
+function getSubsetCombinations(arr, k) {
+    let results = [];
+
+    // Define a recursive function to find subsets
+    function findSubsets(currentSubset, startIndex) {
+        if (currentSubset.length === k) {
+            results.push(currentSubset.slice()); // Add a copy of currentSubset to results
+            return;
+        }
+
+        for (let i = startIndex; i < arr.length; i++) {
+            currentSubset.push(arr[i]); // Include current element in subset
+            findSubsets(currentSubset, i + 1); // Recursively find next elements
+            currentSubset.pop(); // Backtrack: Remove current element to try next one
+        }
+    }
+
+    findSubsets([], 0); // Start with an empty subset and index 0
+    return results;
+}
+
+// Example usage:
+const array = [1, 2, 3];
+const subsetLength = 2;
+const subsets = getSubsetCombinations(array, subsetLength);
+
+console.log(`Subsets of length ${subsetLength} from ${array}:`, subsets);
