@@ -1,0 +1,35 @@
+function longestPalindromicSubstring(s) {
+    if (!s || s.length === 0) return "";
+
+    let start = 0,
+        end = 0;
+
+    // Helper function to expand around the center
+    function expandAroundCenter(left, right) {
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+
+    for (let i = 0; i < s.length; i++) {
+        const len1 = expandAroundCenter(i, i); // For odd length palindromes (centered at one character)
+        const len2 = expandAroundCenter(i, i + 1); // For even length palindromes (centered between two characters)
+        const maxLength = Math.max(len1, len2);
+
+        if (maxLength > end - start) {
+            start = i - Math.floor((maxLength - 1) / 2);
+            end = i + Math.floor(maxLength / 2);
+        }
+    }
+
+    return s.substring(start, end + 1);
+}
+
+// Example usage:
+const inputString1 = "bananas";
+const inputString2 = "abracadabra";
+
+console.log("Longest palindromic substring of 'bananas':", longestPalindromicSubstring(inputString1));
+console.log("Longest palindromic substring of 'abracadabra':", longestPalindromicSubstring(inputString2));
