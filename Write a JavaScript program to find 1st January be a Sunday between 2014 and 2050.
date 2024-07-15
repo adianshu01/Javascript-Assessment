@@ -1,0 +1,19 @@
+function findFirstJanSunday(startYear, endYear) {
+    let years = [];
+
+    for (let year = startYear; year <= endYear; year++) {
+        let date = new Date(year, 0, 1); // January 1st of the current year
+        if (date.getDay() === 0) { // 0 corresponds to Sunday
+            years.push(year);
+        }
+    }
+
+    return years;
+}
+
+const startYear = 2014;
+const endYear = 2050;
+const sundays = findFirstJanSunday(startYear, endYear);
+
+console.log("Years between 2014 and 2050 where January 1st is a Sunday:");
+console.log(sundays.join(", "));
