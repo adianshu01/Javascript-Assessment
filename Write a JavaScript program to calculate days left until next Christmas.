@@ -1,0 +1,25 @@
+function daysUntilNextChristmas() {
+    // Get the current date
+    const today = new Date();
+    // Get the current year
+    const currentYear = today.getFullYear();
+
+    // Create a date object for Christmas this year
+    let nextChristmas = new Date(currentYear, 11, 25); // December is month 11 (0-based index)
+
+    // If Christmas has already passed this year, use next year
+    if (today > nextChristmas) {
+        nextChristmas = new Date(currentYear + 1, 11, 25);
+    }
+
+    // Calculate the difference in time between now and next Christmas
+    const timeDifference = nextChristmas - today;
+
+    // Convert the time difference from milliseconds to days
+    const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+    return daysDifference;
+}
+
+// Calculate and display the number of days until next Christmas
+console.log("Days until next Christmas: " + daysUntilNextChristmas());
