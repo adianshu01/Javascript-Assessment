@@ -1,0 +1,27 @@
+function formatDate(date, format) {
+    const day = ("0" + date.getDate()).slice(-2);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const year = date.getFullYear();
+
+    switch (format) {
+        case 'mm-dd-yyyy':
+            return `${month}-${day}-${year}`;
+        case 'mm/dd/yyyy':
+            return `${month}/${day}/${year}`;
+        case 'dd-mm-yyyy':
+            return `${day}-${month}-${year}`;
+        case 'dd/mm/yyyy':
+            return `${day}/${month}/${year}`;
+        default:
+            return date;
+    }
+}
+
+// Get the current date
+const currentDate = new Date();
+
+// Display the current date in different formats
+console.log("mm-dd-yyyy: " + formatDate(currentDate, 'mm-dd-yyyy'));
+console.log("mm/dd/yyyy: " + formatDate(currentDate, 'mm/dd/yyyy'));
+console.log("dd-mm-yyyy: " + formatDate(currentDate, 'dd-mm-yyyy'));
+console.log("dd/mm/yyyy: " + formatDate(currentDate, 'dd/mm/yyyy'));
