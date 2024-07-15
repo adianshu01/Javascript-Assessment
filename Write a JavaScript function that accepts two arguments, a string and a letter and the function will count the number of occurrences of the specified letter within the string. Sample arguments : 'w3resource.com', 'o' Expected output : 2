@@ -1,0 +1,20 @@
+function countOccurrences(str, letter) {
+    let count = 0;
+
+    // Loop through each character in the string
+    for (let i = 0; i < str.length; i++) {
+        // Check if the current character matches the specified letter
+        if (str.charAt(i) === letter) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Example usage:
+const inputString = 'w3resource.com';
+const specifiedLetter = 'o';
+const occurrences = countOccurrences(inputString, specifiedLetter);
+
+console.log(`Number of occurrences of '${specifiedLetter}' in '${inputString}':`, occurrences);
