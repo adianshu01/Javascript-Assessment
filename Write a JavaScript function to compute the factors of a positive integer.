@@ -1,0 +1,33 @@
+function computeFactors(num) {
+    // Check if num is less than or equal to 0
+    if (num <= 0) {
+        return 'Please enter a positive integer.';
+    }
+
+    // Initialize an empty array to store factors
+    let factors = [];
+
+    // Iterate through numbers from 1 to square root of num
+    for (let i = 1; i <= Math.sqrt(num); i++) {
+        // If i is a divisor of num, add i and num/i to factors
+        if (num % i === 0) {
+            factors.push(i);
+            if (i !== num / i) {
+                factors.push(num / i);
+            }
+        }
+    }
+
+    // Sort the factors array in ascending order
+    factors.sort(function(a, b) {
+        return a - b;
+    });
+
+    return factors;
+}
+
+// Example usage:
+const number = 36;
+const factors = computeFactors(number);
+
+console.log(`Factors of ${number}:`, factors);
