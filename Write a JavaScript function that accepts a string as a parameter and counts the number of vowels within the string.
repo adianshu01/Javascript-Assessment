@@ -1,0 +1,27 @@
+function countVowels(str) {
+    // Define a set of vowel characters
+    const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+
+    // Convert the string to lowercase to handle case insensitivity
+    const lowerCaseStr = str.toLowerCase();
+
+    // Initialize a counter for vowels
+    let vowelCount = 0;
+
+    // Iterate through each character in the string
+    for (let char of lowerCaseStr) {
+        // Check if the character is a vowel and not 'y'
+        if (vowels.has(char) && char !== 'y') {
+            vowelCount++;
+        }
+    }
+
+    return vowelCount;
+}
+
+// Example usage:
+const inputString = 'The quick brown fox';
+const numVowels = countVowels(inputString);
+
+console.log("Input string:", inputString);
+console.log("Number of vowels (excluding 'y'):", numVowels);
