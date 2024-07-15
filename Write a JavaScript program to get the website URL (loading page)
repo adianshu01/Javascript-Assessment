@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Website URL</title>
+</head>
+<body>
+    <script>
+        // Get the current website URL
+        const currentURL = window.location.href;
+
+        // Display the current website URL
+        console.log("Current URL:", currentURL);
+        alert("Current URL: " + currentURL);
+    </script>
+</body>
+</html>
