@@ -1,0 +1,29 @@
+function firstNonRepeatedCharacter(str) {
+    // Initialize an empty object to store character counts
+    let charCount = {};
+
+    // Iterate through each character in the string and count occurrences
+    for (let char of str) {
+        if (charCount[char] === undefined) {
+            charCount[char] = 1; // Initialize count if first occurrence
+        } else {
+            charCount[char]++; // Increment count for subsequent occurrences
+        }
+    }
+
+    // Iterate through the string again to find the first character with count === 1
+    for (let char of str) {
+        if (charCount[char] === 1) {
+            return char; // Return the first non-repeated character
+        }
+    }
+
+    // If no non-repeated character found, return null or handle as needed
+    return null; 
+}
+
+// Example usage:
+const inputString = 'abacddbec';
+const firstUniqueChar = firstNonRepeatedCharacter(inputString);
+
+console.log(`First non-repeated character in '${inputString}':`, firstUniqueChar);
