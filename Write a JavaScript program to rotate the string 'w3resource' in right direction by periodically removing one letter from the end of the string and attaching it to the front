@@ -1,0 +1,20 @@
+function rotateStringRight(str) {
+    // Convert the string to an array for easier manipulation
+    let arr = str.split('');
+
+    // Function to rotate the string
+    function rotate() {
+        // Remove the last element and insert it at the beginning
+        let lastChar = arr.pop();
+        arr.unshift(lastChar);
+
+        // Convert the array back to a string and log it
+        console.log(arr.join(''));
+    }
+
+    // Rotate the string every 500 milliseconds (0.5 seconds)
+    setInterval(rotate, 500);
+}
+
+// Start rotating the string 'w3resource'
+rotateStringRight('w3resource');
