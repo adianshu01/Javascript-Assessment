@@ -1,0 +1,20 @@
+function generateRandomId(length) {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = '';
+
+    for (let i = 0; i < length; i++) {
+        // Generate a random index within the character list length
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        
+        // Append the character at the random index to the result
+        result += characters.charAt(randomIndex);
+    }
+
+    return result;
+}
+
+// Example usage:
+const idLength = 10;
+const randomId = generateRandomId(idLength);
+
+console.log(`Random ID of length ${idLength}:`, randomId);
