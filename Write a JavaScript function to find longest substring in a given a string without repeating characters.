@@ -1,0 +1,31 @@
+function longestSubstringWithoutRepeatingCharacters(str) {
+    let maxLength = 0; // Initialize maximum length of substring
+    let start = 0; // Initialize starting index of substring
+    let seenChars = new Set(); // Set to track unique characters
+    let longestSubstring = ''; // Initialize longest substring
+
+    for (let end = 0; end < str.length; end++) {
+        const currentChar = str[end];
+
+        while (seenChars.has(currentChar)) {
+            seenChars.delete(str[start]); // Remove characters from the beginning until currentChar is unique
+            start++;
+        }
+
+        seenChars.add(currentChar); // Add currentChar to the set
+        const currentLength = end - start + 1; // Calculate current length of substring
+
+        if (currentLength > maxLength) {
+            maxLength = currentLength; // Update maximum length
+            longestSubstring = str.slice(start, end + 1); // Update longest substring
+        }
+    }
+
+    return longestSubstring;
+}
+
+// Example usage:
+const inputString = "abcabcbb";
+const longestSubstring = longestSubstringWithoutRepeatingCharacters(inputString);
+
+console.log("Longest substring without repeating characters:", longestSubstring);
