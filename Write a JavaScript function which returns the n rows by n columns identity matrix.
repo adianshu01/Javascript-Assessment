@@ -1,0 +1,32 @@
+function identityMatrix(n) {
+    // Initialize an empty array to store the identity matrix
+    let matrix = [];
+
+    // Iterate through rows
+    for (let i = 0; i < n; i++) {
+        // Initialize a row array
+        let row = [];
+
+        // Iterate through columns
+        for (let j = 0; j < n; j++) {
+            // Set diagonal elements to 1, others to 0
+            if (i === j) {
+                row.push(1);
+            } else {
+                row.push(0);
+            }
+        }
+
+        // Push the row array to the matrix
+        matrix.push(row);
+    }
+
+    return matrix;
+}
+
+// Example usage:
+const n = 4;
+const resultMatrix = identityMatrix(n);
+
+console.log(`Identity matrix of size ${n}x${n}:`);
+console.log(resultMatrix.map(row => row.join(' ')).join('\n'));
