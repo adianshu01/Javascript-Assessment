@@ -1,0 +1,11 @@
+function sortString(str) {
+    // Convert the string to an array of characters, sort them alphabetically, and join them back into a string
+    return str.split('').sort().join('');
+}
+
+// Example usage:
+const inputString = 'webmaster';
+const sortedString = sortString(inputString);
+
+console.log("Input string:", inputString);
+console.log("Sorted string:", sortedString);
