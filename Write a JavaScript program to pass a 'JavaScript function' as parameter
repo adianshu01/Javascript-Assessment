@@ -1,0 +1,17 @@
+// Define a function that takes another function as a parameter
+function greet(name, callback) {
+    console.log(`Hello, ${name}!`);
+    callback(); // Invoke the callback function passed as parameter
+}
+
+// Define a function that will be passed as a callback
+function sayGoodbye() {
+    console.log("Goodbye!");
+}
+
+// Pass the 'sayGoodbye' function as a parameter to 'greet'
+greet("Alice", sayGoodbye);
+
+// Output:
+// Hello, Alice!
+// Goodbye!
