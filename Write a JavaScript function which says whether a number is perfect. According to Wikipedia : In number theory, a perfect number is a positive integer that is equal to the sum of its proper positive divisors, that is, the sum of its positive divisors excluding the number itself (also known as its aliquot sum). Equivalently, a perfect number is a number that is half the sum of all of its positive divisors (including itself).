@@ -1,0 +1,27 @@
+function isPerfectNumber(num) {
+    if (num <= 1) {
+        return false; // Perfect numbers are greater than 1
+    }
+
+    let sum = 0;
+    
+    // Find all divisors (excluding the number itself)
+    for (let i = 1; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            sum += i; // Add divisor
+            if (i !== 1 && i !== num / i) {
+                sum += num / i; // Add corresponding divisor
+            }
+        }
+    }
+
+    // Check if sum of divisors equals the number
+    return sum === num;
+}
+
+// Example usage:
+console.log("Is 6 a perfect number?", isPerfectNumber(6)); // true
+console.log("Is 28 a perfect number?", isPerfectNumber(28)); // true
+console.log("Is 12 a perfect number?", isPerfectNumber(12)); // false
+console.log("Is 496 a perfect number?", isPerfectNumber(496)); // true
+console.log("Is 8128 a perfect number?", isPerfectNumber(8128)); // true
