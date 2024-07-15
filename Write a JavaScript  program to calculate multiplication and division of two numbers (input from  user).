@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication and Division</title>
+</head>
+<body>
+    <script>
+        // Prompt the user to input the first number
+        const num1 = parseFloat(prompt("Enter the first number:"));
+
+        // Prompt the user to input the second number
+        const num2 = parseFloat(prompt("Enter the second number:"));
+
+        // Check if the inputs are valid numbers
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Please enter valid numbers.");
+        } else {
+            // Calculate the multiplication
+            const multiplication = num1 * num2;
+
+            // Calculate the division
+            const division = num1 / num2;
+
+            // Display the results
+            alert(`Multiplication of ${num1} and ${num2} is: ${multiplication}`);
+            alert(`Division of ${num1} by ${num2} is: ${division}`);
+        }
+    </script>
+</body>
+</html>
