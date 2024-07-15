@@ -1,0 +1,14 @@
+function computePower(base, exponent) {
+    // Calculate b^n using Math.pow(base, exponent) or base ** exponent
+    let result = Math.pow(base, exponent);
+    // let result = base ** exponent; // Alternatively, you can use the exponentiation operator **
+
+    return result;
+}
+
+// Example usage with user input (you can replace with your own logic to get input):
+const b = 2; // Example base
+const n = 5; // Example exponent
+
+const powerResult = computePower(b, n);
+console.log(`${b} raised to the power of ${n} is:`, powerResult);
