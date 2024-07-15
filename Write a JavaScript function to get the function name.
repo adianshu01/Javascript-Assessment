@@ -1,0 +1,14 @@
+function getFunctionName(func) {
+    // Use a regular expression to parse the function name from its string representation
+    const funcString = func.toString();
+    const name = funcString.substring(funcString.indexOf("function") + 9, funcString.indexOf("(")).trim();
+    return name;
+}
+
+// Example usage:
+function myNamedFunction() {
+    console.log("This is a named function");
+}
+
+const functionName = getFunctionName(myNamedFunction);
+console.log(functionName); // Output: "myNamedFunction"
