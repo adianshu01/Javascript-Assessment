@@ -1,0 +1,23 @@
+function Longest_Country_Name(countryNames) {
+    // Initialize variables to store the longest country name and its length
+    let longestName = '';
+    let maxLength = 0;
+
+    // Iterate through the array of country names
+    for (let i = 0; i < countryNames.length; i++) {
+        // Check the length of the current country name
+        if (countryNames[i].length > maxLength) {
+            // Update the longest country name and its length
+            maxLength = countryNames[i].length;
+            longestName = countryNames[i];
+        }
+    }
+
+    return longestName;
+}
+
+// Example usage:
+const countries = ["Australia", "Germany", "United States of America"];
+const longestCountry = Longest_Country_Name(countries);
+
+console.log("Longest country name:", longestCountry);
